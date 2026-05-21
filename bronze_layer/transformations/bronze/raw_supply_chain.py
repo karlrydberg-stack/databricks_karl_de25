@@ -1,7 +1,7 @@
 from pyspark import pipelines as dp
 
 
-BASE_DIR = "/Volumes/supply_chain_demo/default/raw"
+BASE_DIR = "/Volumes/supply_chain_live/default/raw"
 # raw_file_path = "/Volumes/data/preparations/raw/DataCoSupplyChainDataset.csv"
 
 # parse schema from csv file and use it for the streaming table
@@ -19,7 +19,7 @@ schema = (
 
 
 @dp.table(
-    name="supply_chain_demo.bronze.raw_supply_chain",
+    name="supply_chain_live.bronze.raw_supply_chain",
     # enable column mapping to handle invalid characters in original column names
     comment="Raw orders data as the bronze layer in medallion architecture",
     table_properties={
